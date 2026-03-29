@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --fk-blue: #2874f0;
+    --fk-red: #ff6161;
+    --fk-bg: #f1f3f6;
+  }
+
+  html {
+    @apply scroll-smooth antialiased;
+  }
+
+  body {
+    @apply min-h-screen bg-[#f1f3f6] text-gray-900;
+    text-rendering: optimizeLegibility;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    @apply rounded-sm outline-2 outline-offset-2 outline-flipkart-blue;
+  }
+}
+
+/* Category strip: thin scrollbar */
+.category-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(40, 116, 240, 0.35) transparent;
+}
+
+.category-scroll::-webkit-scrollbar {
+  height: 5px;
+}
+
+.category-scroll::-webkit-scrollbar-track {
+  @apply rounded-full bg-gray-100;
+}
+
+.category-scroll::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-flipkart-blue/40;
+}
+
+.category-scroll::-webkit-scrollbar-thumb:hover {
+  @apply bg-flipkart-blue/60;
+}

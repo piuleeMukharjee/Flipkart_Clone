@@ -1,0 +1,18 @@
+# PostgreSQL for local Flipkart clone — run from project root:
+#   docker compose up -d
+# Then: cd backend && npx prisma db push && npm run db:seed
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: flipkart_clone
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
