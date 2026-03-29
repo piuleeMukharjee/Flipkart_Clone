@@ -97,12 +97,6 @@ Open **http://localhost:3000**.
 - **`backend/prisma/seed.sql`** resets tables and inserts categories + user `id=1`; run **`db:seed`** afterward for full product data, or extend the SQL file with your own `INSERT`s.
 - To snapshot data as SQL: `pg_dump --data-only your_db > backup.sql`.
 
-## Interview talking points
-
-- **Prisma**: relational model, cascades, transactions for checkout (stock decrement + order + clear cart).  
-- **API**: consistent `{ success, data | message }`, status codes, centralized async error handler.  
-- **Frontend**: App Router, client islands for cart/`useSearchParams`, Context syncing with REST cart.  
-- **Trade-off**: no auth — `DEFAULT_USER_ID` documents the demo constraint; production would add sessions/JWT and user resolution.
 
 ## License
 
